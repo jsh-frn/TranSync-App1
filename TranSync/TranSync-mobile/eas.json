@@ -1,0 +1,42 @@
+{
+  "cli": {
+    "version": ">= 12.0.0",
+    "appVersionSource": "local"
+  },
+  "build": {
+    "development": {
+      "developmentClient": true,
+      "distribution": "internal"
+    },
+    "preview": {
+      "distribution": "internal",
+      "android": {
+        "buildType": "apk"
+      },
+      "env": {
+        "EXPO_PUBLIC_API_BASE_URL": "https://transync.tech/TranSync-App/transync-backend/api",
+        "EXPO_PUBLIC_GOOGLE_MAPS_KEY": "AIzaSyC5M8jDBgCE6L3tCC1JploVMqZisOjDk-0"
+      }
+    },
+    "preview-simulator": {
+      "distribution": "internal",
+      "ios": {
+        "simulator": true
+      },
+      "env": {
+        "EXPO_PUBLIC_API_BASE_URL": "https://transync.tech/TranSync-App/transync-backend/api",
+        "EXPO_PUBLIC_GOOGLE_MAPS_KEY": "AIzaSyC5M8jDBgCE6L3tCC1JploVMqZisOjDk-0"
+      }
+    },
+    "production": {
+      "autoIncrement": true,
+      "env": {
+        "EXPO_PUBLIC_API_BASE_URL": "https://transync.tech/TranSync-App/transync-backend/api",
+        "EXPO_PUBLIC_GOOGLE_MAPS_KEY": "AIzaSyC5M8jDBgCE6L3tCC1JploVMqZisOjDk-0"
+      }
+    }
+  },
+  "submit": {
+    "production": {}
+  }
+}

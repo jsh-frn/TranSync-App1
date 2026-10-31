@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+/* Google Places Autocomplete dropdown must sit above modals (z-50 = 50) */
+.pac-container {
+  z-index: 100000 !important;
+  font-family: 'Segoe UI', sans-serif;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+  margin-top: 4px;
+}
+.pac-item {
+  padding: 8px 12px;
+  font-size: 13px;
+  cursor: pointer;
+}
+.pac-item:hover { background: #f8fafc; }
+.pac-item-query { font-weight: 600; color: #1a4a52; }

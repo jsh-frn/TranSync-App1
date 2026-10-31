@@ -1,0 +1,11 @@
+-- Reversible self-service commuter account deactivation (Commuter Settings
+-- page). Deliberately a NEW, separate column — NOT a reuse of
+-- commuters.status/rejected_at, which login_mobile.php's commuter branch
+-- already reads as "admin rejected this account" (status='inactive' AND
+-- rejected_at IS NULL is an existing blocking gate with a "contact support"
+-- message). Reusing that column for self-deactivation would immediately
+-- trip that gate and block the very reactivate-by-logging-back-in behavior
+-- this feature needs. deactivated_at is read only by the deactivate/login
+-- endpoints themselves — a simple flag, cleared automatically the moment
+-- the commuter logs back in successfully.
+ALTER TABLE commuters ADD COLUMN deactivated_at DATETIME NULL AFTER status;

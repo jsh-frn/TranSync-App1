@@ -1,0 +1,11 @@
+-- Permanent commuter account deletion (Commuter Settings — Delete Account),
+-- replacing the reversible Deactivation UI added in migration 045. A new,
+-- separate column from deactivated_at: deleting scrubs PII on the commuters
+-- row and permanently blocks login by anonymizing the email/phone a login
+-- attempt would look up, while wallets/reservations/wallet_transactions/
+-- commuter_id_verifications stay fully intact (financial/audit integrity —
+-- a commuter row is referenced by too many other tables for a true DELETE
+-- to be safe, and this app never destroys historical transactional data).
+-- deactivated_at/deactivate_account.php are left in place, unused by any
+-- current UI — deprecate-in-place, matching this codebase's convention.
+ALTER TABLE commuters ADD COLUMN deleted_at DATETIME NULL AFTER deactivated_at;

@@ -1,0 +1,64 @@
+{
+  "expo": {
+    "name": "TranSync-mobile",
+    "slug": "TranSync-mobile",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "scheme": "transyncmobile",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.transync.mobile",
+      "infoPlist": {
+        "NSCameraUsageDescription": "TranSync needs camera access to capture your Student ID, Enrollment Form, and a live facial verification selfie.",
+        "NSLocationWhenInUseUsageDescription": "TranSync uses your location to show nearby drivers, plan routes, and track your trip on the map.",
+        "NSPhotoLibraryUsageDescription": "TranSync needs access to your photo library to let you choose a profile picture.",
+        "ITSAppUsesNonExemptEncryption": false
+      }
+    },
+    "android": {
+      "package": "com.transync.mobile",
+      "adaptiveIcon": {
+        "backgroundColor": "#1a4a52",
+        "foregroundImage": "./assets/images/android-icon-foreground.png",
+        "backgroundImage": "./assets/images/android-icon-background.png",
+        "monochromeImage": "./assets/images/android-icon-monochrome.png"
+      },
+      "edgeToEdgeEnabled": true,
+      "predictiveBackGestureEnabled": false,
+      "softwareKeyboardLayoutMode": "pan",
+      "permissions": ["android.permission.CAMERA"]
+    },
+    "web": {
+      "output": "static",
+      "favicon": "./assets/images/favicon.png"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/images/splash-icon.png",
+          "imageWidth": 200,
+          "resizeMode": "contain",
+          "backgroundColor": "#ffffff",
+          "dark": {
+            "backgroundColor": "#000000"
+          }
+        }
+      ],
+      "@react-native-community/datetimepicker"
+    ],
+    "experiments": {
+      "typedRoutes": true,
+      "reactCompiler": true
+    },
+    "extra": {
+      "eas": {
+        "projectId": "a0692bce-b96d-48cf-aef6-b9562fe8dc24"
+      }
+    }
+  }
+}

@@ -1,0 +1,45 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Expo / React Native
+.expo/
+.expo-shared/
+dist/
+web-build/
+
+# Build outputs
+build/
+*.apk
+*.ipa
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Env / secrets
+.env
+.env.local
+*.log
+
+# Claude
+.claude/
+
+# XAMPP / PHP
+uploads/
+# keep structure but ignore uploaded files? Actually keep folder
+# We'll not ignore entire uploads; ignore files inside
+transync-backend/uploads/commuters/*
+transync-backend/uploads/operators/*
+!transync-backend/uploads/commuters/.gitkeep
+!transync-backend/uploads/operators/.gitkeep
